@@ -1,5 +1,15 @@
 import { useState } from "react";
 import "./App.css";
+
+import PermissionGate
+from "./components/PermissionGate";
+ 
+import Projects
+from "./components/Projects";
+ 
+import { projects }
+from "./data/projects";
+
 const [hasPermission, setHasPermission] = useState(false);
 const hardSkills = [
   "Product Strategy & Roadmapping",
