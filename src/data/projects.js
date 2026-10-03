@@ -6,36 +6,35 @@ export const projects = [
     permissionRequired: true,
 
     summary:
-      "Led strategic roadmap development and product modernization initiatives.",
+      "Led roadmap development and modernization initiatives.",
 
     details:
-      "Detailed company-specific information available upon request."
+      "Detailed company information available upon request."
   },
 
   {
     id: 2,
-    title: "Digital Transformation Program",
-    company: "Confidential",
-    permissionRequired: true,
-
-    summary:
-      "Managed enterprise modernization and customer experience improvement programs.",
-
-    details:
-      "Detailed company-specific information available upon request."
-  },
-
-  {
-    id: 3,
     title: "Platform Modernization",
     company: "Confidential",
     permissionRequired: true,
 
     summary:
-      "Unified legacy systems into scalable customer-centric platforms.",
+      "Unified legacy systems into scalable platforms.",
 
     details:
-      "Detailed company-specific information available upon request."
+      "Detailed company information available upon request."
+  },
+
+  {
+    id: 3,
+    title: "Digital Commerce Optimization",
+    company: "Confidential",
+    permissionRequired: true,
+
+    summary:
+      "Improved customer journeys and conversion.",
+
+    details:
+      "Detailed company information available upon request."
   }
 ];
-``
