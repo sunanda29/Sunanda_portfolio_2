@@ -1,43 +1,41 @@
 export const projects = [
   {
-    title: "Offer & Pricing Modernization",
-    company: "Enercare",
-    description:
-      "Created centralized offer and pricing capabilities reducing deployment cycles from weeks to hours."
+    id: 1,
+    title: "Product Strategy Initiative",
+    company: "Confidential",
+    permissionRequired: true,
+
+    summary:
+      "Led strategic roadmap development and product modernization initiatives.",
+
+    details:
+      "Detailed company-specific information available upon request."
   },
 
   {
-    title: "Alta Brewers",
-    company: "Keurig",
-    description:
-      "Worked on Next generation coffee pods and Smart Eco-friendly coffee machines"
+    id: 2,
+    title: "Digital Transformation Program",
+    company: "Confidential",
+    permissionRequired: true,
+
+    summary:
+      "Managed enterprise modernization and customer experience improvement programs.",
+
+    details:
+      "Detailed company-specific information available upon request."
   },
 
   {
-    title: "Checkout Optimization",
-    company: "Keurig",
-    description:
-      "Improved customer conversion through checkout redesign and payment enhancements."
-  },
+    id: 3,
+    title: "Platform Modernization",
+    company: "Confidential",
+    permissionRequired: true,
 
-  {
-    title: "SMART Brewer Platform",
-    company: "Keurig",
-    description:
-      "Connected mobile, subscription and smart device experiences."
-  },
+    summary:
+      "Unified legacy systems into scalable customer-centric platforms.",
 
-  {
-    title: "OneView Retail Platform",
-    company: "Rogers",
-    description:
-      "Retail modernization initiative delivering operational efficiencies and improved customer experiences."
-  },
-
-  {
-    title: "Global Omni Item",
-    company: "Walmart",
-    description:
-      "Unified global catalog management platform supporting large-scale supplier operations."
+    details:
+      "Detailed company-specific information available upon request."
   }
 ];
+``
