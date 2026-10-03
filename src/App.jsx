@@ -79,7 +79,7 @@ const knowledgeBase = {
 
   "Data Science & Quantitative Analytics": {
     answer:
-      "Built predictive models, dashboards, KPI measurements and analytics frameworks using SQL, Python and BI tools.",
+      "Built predictive models, data models, dashboards, KPI measurements and analytics frameworks using SQL, Python and BI tools.",
     related: [
       "Technical Aptitude",
       "Financial & Business Acumen"
