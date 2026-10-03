@@ -1,6 +1,6 @@
 import { useState } from "react";
 import "./App.css";
-
+const [hasPermission, setHasPermission] = useState(false);
 const hardSkills = [
   "Product Strategy & Roadmapping",
   "Data Analysis & Market Research",
