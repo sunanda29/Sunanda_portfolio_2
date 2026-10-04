@@ -1,6 +1,6 @@
-import { defi*eConfig } from "vite";
-import reac* from "@vitejs/plugin-react";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-exp*rt default defineConfig({
-  plugin*: [react()]
+export default defineConfig({
+  plugins: [react()]
 });
