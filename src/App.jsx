@@ -1,16 +1,11 @@
 import { useState } from "react";
 import "./App.css";
 
-import PermissionGate
-from "./components/PermissionGate";
- 
-import Projects
-from "./components/Projects";
- 
-import { projects }
-from "./data/projects";
+import PermissionGate from "./components/PermissionGate";
+import Projects from "./components/Projects";
 
-const [hasPermission, setHasPermission] = useState(false);
+import { projects } from "./data/projects";
+
 const hardSkills = [
   "Product Strategy & Roadmapping",
   "Data Analysis & Market Research",
@@ -34,7 +29,7 @@ const softSkills = [
 const knowledgeBase = {
   "Product Strategy & Roadmapping": {
     answer:
-      "Led roadmap development and product strategy across Enercare, Rogers, Walmart, and Keurig. Defined visions, prioritized roadmaps, aligned stakeholders and delivered large-scale transformations.",
+      "Led roadmap development and product strategy across multiple enterprise organizations, aligning stakeholders and delivering large-scale transformations.",
     related: [
       "Strategic Thinking",
       "Agile & Project Management",
@@ -62,7 +57,7 @@ const knowledgeBase = {
 
   "Technical Aptitude": {
     answer:
-      "Worked extensively with Salesforce, APIs, SaaS platforms, cloud-native systems, pricing engines and platform modernization programs.",
+      "Worked extensively with APIs, SaaS platforms, cloud-native systems, pricing engines and platform modernization initiatives.",
     related: [
       "Agile & Project Management",
       "Cross-Functional Collaboration"
@@ -71,7 +66,7 @@ const knowledgeBase = {
 
   "Agile & Project Management": {
     answer:
-      "Led PI planning, Sprint planning, backlog refinement, release management and delivery governance across multiple organizations.",
+      "Led PI planning, sprint planning, backlog refinement, release management and delivery governance across multiple organizations.",
     related: [
       "Leadership & Team Management",
       "Strategic Thinking"
@@ -89,7 +84,7 @@ const knowledgeBase = {
 
   "Data Science & Quantitative Analytics": {
     answer:
-      "Built predictive models, data models, dashboards, KPI measurements and analytics frameworks using SQL, Python and BI tools.",
+      "Built predictive models, dashboards, KPI measurements and analytics frameworks using SQL, Python and BI tools.",
     related: [
       "Technical Aptitude",
       "Financial & Business Acumen"
@@ -171,7 +166,11 @@ export default function App() {
   const [selectedSkill, setSelectedSkill] =
     useState(null);
 
-  const [question, setQuestion] = useState("");
+  const [question, setQuestion] =
+    useState("");
+
+  const [hasPermission, setHasPermission] =
+    useState(false);
 
   return (
     <div className="container">
@@ -251,7 +250,7 @@ export default function App() {
         <h2>Hard Skills</h2>
 
         <div className="skills-grid">
-          {hardSkills.map(skill => (
+          {hardSkills.map((skill) => (
             <SkillCard
               key={skill}
               skill={skill}
@@ -269,7 +268,7 @@ export default function App() {
         <h2>Soft Skills</h2>
 
         <div className="skills-grid">
-          {softSkills.map(skill => (
+          {softSkills.map((skill) => (
             <SkillCard
               key={skill}
               skill={skill}
@@ -283,7 +282,6 @@ export default function App() {
       {/* ASK SECTION */}
 
       {selectedSkill && (
-
         <section className="ask-section">
 
           <h2>{selectedSkill}</h2>
@@ -319,7 +317,7 @@ export default function App() {
             <div className="related">
 
               {knowledgeBase[selectedSkill]?.related?.map(
-                item => (
+                (item) => (
                   <button
                     key={item}
                     className="related-btn"
@@ -337,8 +335,19 @@ export default function App() {
           </div>
 
         </section>
-
       )}
+
+      {/* PROJECT PERMISSIONS */}
+
+      <PermissionGate
+        hasPermission={hasPermission}
+        setHasPermission={setHasPermission}
+      />
+
+      <Projects
+        projects={projects}
+        hasPermission={hasPermission}
+      />
 
       {/* CONTACT */}
 
