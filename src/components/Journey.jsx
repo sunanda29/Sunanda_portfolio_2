@@ -8,17 +8,17 @@ export default function Journey() {
       </h2>
 
       <div className="journey-grid">
-        {careerJourney.map((item, index) => (
+        {careerJourney.map((job, index) => (
           <div
             key={index}
             className="journey-card"
           >
             <div className="journey-company">
-              {item.company}
+              {job.company}
             </div>
 
             <div className="journey-role">
-              {item.role}
+              {job.role}
             </div>
           </div>
         ))}
