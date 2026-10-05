@@ -5,7 +5,7 @@ export default function Hero() {
         PRODUCT • DIGITAL • AI • TRANSFORMATION
       </div>
 
-      <h1 className="hero-name">
+      <h3 className="hero-name">
         Sunanda
         <br />
         Murthyraju
