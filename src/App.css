@@ -67,12 +67,13 @@
   background: white;
   border-radius: 10px;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all 0.25s ease;
 }
 
 .skill-card:hover {
   background: #0a5a42;
   color: white;
+  transform: translateY(-2px);
 }
 
 .ask-section {
@@ -81,16 +82,41 @@
 
 textarea {
   width: 100%;
-  height: 120px;
+  min-height: 150px;
   margin-top: 15px;
   padding: 15px;
   border: 1px solid #ccc;
   border-radius: 8px;
+  font-size: 16px;
+  resize: vertical;
+  box-sizing: border-box;
 }
 
 .counter {
   margin-top: 10px;
-  color: gray;
+  color: #777;
+}
+
+.char-count {
+  margin-top: 10px;
+  color: #777;
+  font-size: 14px;
+}
+
+.submit-btn {
+  margin-top: 15px;
+  padding: 12px 24px;
+  background: #0a5a42;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.submit-btn:hover {
+  background: #084532;
 }
 
 .answer-box {
@@ -124,6 +150,48 @@ textarea {
   cursor: pointer;
 }
 
+/* ===== KNOWLEDGE EXPLORER ===== */
+
+.breadcrumb {
+  margin-top: 25px;
+  padding: 15px;
+  background: #f5f7f6;
+  border-left: 4px solid #0a5a42;
+  border-radius: 8px;
+  font-size: 14px;
+  color: #555;
+  line-height: 1.5;
+}
+
+.topics-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 20px;
+}
+
+.topic-btn {
+  padding: 12px 18px;
+  background: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.25s ease;
+  font-size: 14px;
+}
+
+.topic-btn:hover {
+  background: #0a5a42;
+  color: white;
+  border-color: #0a5a42;
+}
+
+.topic-btn:active {
+  transform: scale(0.97);
+}
+
+/* ===== CONTACT SECTION ===== */
+
 .contact {
   margin-top: 120px;
   margin-bottom: 80px;
@@ -146,23 +214,19 @@ textarea {
   color: white;
   border-radius: 8px;
   text-decoration: none;
+  transition: all 0.25s ease;
 }
 
 .contact-btn:hover {
   background: #084532;
 }
 
+/* ===== RESPONSIVE ===== */
+
 @media (max-width: 768px) {
-
-  .hero h1 {
-    font-size: 52px;
-  }
-
-  .hero-text {
-    font-size: 18px;
-  }
-
   .container {
     padding: 20px;
   }
-}
+
+  .hero h1 {
+   
