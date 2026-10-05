@@ -6,9 +6,7 @@ export default function Hero() {
       </div>
 
       <h3 className="hero-name">
-        Sunanda
-        <br />
-        Murthyraju
+        Sunanda Murthyraju
       </h3>
 
       <p className="hero-description">
