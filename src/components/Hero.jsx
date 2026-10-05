@@ -9,7 +9,7 @@ export default function Hero() {
         Sunanda
         <br />
         Murthyraju
-      </h1>
+      </h3>
 
       <p className="hero-description">
         Product Strategy. Digital Transformation. Customer Experience.
