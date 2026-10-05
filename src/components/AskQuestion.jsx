@@ -13,22 +13,35 @@ export default function AskQuestion({ skill }) {
   };
 
   const handleSubmit = () => {
+    if (!question.trim()) return;
+
     const nextTopics = knowledgeGraph[skill.title];
 
-    if (!nextTopics) return;
-
-    setTopics(nextTopics);
     setPath([skill.title]);
+
+    if (nextTopics) {
+      setTopics(nextTopics);
+    } else {
+      setTopics([]);
+    }
   };
 
   const handleTopicClick = (topic) => {
-    setPath((prev) => [...prev, topic]);
+    const newPath = [...path, topic];
+    setPath(newPath);
 
     if (knowledgeGraph[topic]) {
       setTopics(knowledgeGraph[topic]);
     } else {
-      setTopics([]);
+      // infinite loop back to root skill
+      setTopics([skill.title]);
     }
+  };
+
+  const resetJourney = () => {
+    setQuestion("");
+    setTopics([]);
+    setPath([]);
   };
 
   return (
@@ -51,13 +64,23 @@ export default function AskQuestion({ skill }) {
         {question.length}/100 characters
       </div>
 
-      <button
-        type="button"
-        className="submit-btn"
-        onClick={handleSubmit}
-      >
-        Explore
-      </button>
+      <div className="button-group">
+        <button
+          type="button"
+          className="submit-btn"
+          onClick={handleSubmit}
+        >
+          Submit
+        </button>
+
+        <button
+          type="button"
+          className="reset-btn"
+          onClick={resetJourney}
+        >
+          Reset
+        </button>
+      </div>
 
       {path.length > 0 && (
         <div className="breadcrumb">
