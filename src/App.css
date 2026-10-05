@@ -5,252 +5,255 @@
 }
 
 body {
-  background: #f4f7fb;
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-  color: #1f2937;
+  font-family: Inter, Segoe UI, sans-serif;
+  background: #f4f4f4;
+  color: #111;
 }
 
 .app {
-  min-height: 100vh;
+  width: 100%;
 }
 
+/* =========================
+   HERO SECTION
+========================= */
+
 .hero {
-  background: linear-gradient(135deg, #0f172a, #2563eb);
+  min-height: 70vh;
+  background: linear-gradient(
+    135deg,
+    #0f172a 0%,
+    #1e3a8a 50%,
+    #3b82f6 100%
+  );
+
   color: white;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
   text-align: center;
   padding: 60px 20px;
 }
 
-.hero h1 {
-  font-size: 3rem;
-  margin-bottom: 12px;
-}
-
-.hero p {
+.hero-tagline {
+  text-transform: uppercase;
+  letter-spacing: 2px;
   font-size: 1.2rem;
+  margin-bottom: 20px;
   opacity: 0.9;
 }
 
-.section {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
+.hero h1 {
+  font-size: 6rem;
+  font-weight: 800;
+  line-height: 0.95;
   margin-bottom: 30px;
-  color: #111827;
 }
 
-.skills-grid {
+.hero p {
+  max-width: 1200px;
+  font-size: 2rem;
+  font-weight: 300;
+  line-height: 1.4;
+}
+
+/* =========================
+   CONTENT WRAPPER
+========================= */
+
+.section {
+  max-width: 1400px;
+  margin: auto;
+  padding: 80px 40px;
+}
+
+.section h2 {
+  font-size: 4rem;
+  margin-bottom: 50px;
+  font-weight: 800;
+}
+
+/* =========================
+   JOURNEY CARDS
+========================= */
+
+.journey-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.journey-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+
+  border-left: 8px solid #2d6a4f;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
+
+  transition: all 0.3s ease;
+}
+
+.journey-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 35px rgba(0,0,0,0.12);
+}
+
+.journey-company {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.journey-role {
+  font-size: 1.4rem;
+  color: #444;
+}
+
+/* =========================
+   SKILLS SECTION
+========================= */
+
+.skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 24px;
 }
 
 .skill-card {
   background: white;
-  border-radius: 14px;
-  padding: 22px;
+  border-radius: 20px;
+  padding: 28px;
+
   cursor: pointer;
+
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
   transition: all 0.3s ease;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
 .skill-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+  background: #1e3a8a;
+  color: white;
 }
 
 .skill-card h3 {
-  color: #2563eb;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
-.skill-card p {
-  color: #6b7280;
-  font-size: 0.95rem;
-}
+/* =========================
+   QUESTION BOX
+========================= */
 
-.ask-question {
-  margin-top: 30px;
-  background: white;
-  padding: 25px;
-  border-radius: 14px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
-}
-
-.ask-question h2 {
-  color: #2563eb;
-  margin-bottom: 10px;
-}
-
-.ask-question p {
-  margin-bottom: 15px;
-  color: #4b5563;
-}
-
-.ask-question textarea {
-  width: 100%;
-  padding: 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 10px;
-  resize: vertical;
-  font-size: 1rem;
-  outline: none;
-}
-
-.ask-question textarea:focus {
-  border-color: #2563eb;
-}
-
-.char-count {
-  margin-top: 8px;
-  text-align: right;
-  font-size: 0.85rem;
-  color: #6b7280;
-}
-
-.button-group {
-  display: flex;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.submit-btn {
-  background: #2563eb;
-  color: white;
-  border: none;
-  padding: 12px 22px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.submit-btn:hover {
-  background: #1d4ed8;
-}
-
-.reset-btn {
-  background: #6b7280;
-  color: white;
-  border: none;
-  padding: 12px 22px;
-  border-radius: 8px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: 0.3s;
-}
-
-.reset-btn:hover {
-  background: #4b5563;
-}
-
-.breadcrumb {
-  margin-top: 20px;
-  padding: 12px;
-  background: #eff6ff;
-  border-left: 4px solid #2563eb;
-  border-radius: 8px;
-  font-size: 0.95rem;
-  word-break: break-word;
-}
-
-.topics-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 20px;
-}
-
-.topic-btn {
-  background: #ffffff;
-  border: 2px solid #2563eb;
-  color: #2563eb;
-  padding: 10px 18px;
-  border-radius: 30px;
-  cursor: pointer;
-  font-weight: 600;
-  transition: all 0.3s ease;
-}
-
-.topic-btn:hover {
-  background: #2563eb;
-  color: white;
-}
-
-.journey-container {
-  margin-top: 30px;
-}
-
-.contact {
+.question-box {
   background: white;
   margin-top: 40px;
   padding: 30px;
-  border-radius: 14px;
-  text-align: center;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.05);
 }
 
-.contact h2 {
-  margin-bottom: 15px;
+.question-box input {
+  width: 100%;
+  padding: 16px;
+  border: 2px solid #ddd;
+  border-radius: 12px;
+  font-size: 1rem;
+}
+
+.question-box button {
+  margin-top: 16px;
+  padding: 14px 28px;
+  border: none;
+  border-radius: 12px;
+
+  background: #2563eb;
+  color: white;
+  font-weight: 600;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.question-box button:hover {
+  background: #1d4ed8;
+}
+
+/* =========================
+   DRILLDOWN BUTTONS
+========================= */
+
+.drilldown-container {
+  margin-top: 25px;
+
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.drilldown-button {
+  background: white;
+  border: 2px solid #2563eb;
+
   color: #2563eb;
+
+  padding: 12px 20px;
+  border-radius: 30px;
+
+  cursor: pointer;
+  font-weight: 600;
+
+  transition: all 0.3s ease;
 }
 
-.contact a {
+.drilldown-button:hover {
+  background: #2563eb;
+  color: white;
+}
+
+/* =========================
+   CONTACT SECTION
+========================= */
+
+.contact-section {
+  text-align: center;
+}
+
+.contact-section a {
   color: #2563eb;
   text-decoration: none;
-  font-weight: 600;
 }
 
-.contact a:hover {
+.contact-section a:hover {
   text-decoration: underline;
 }
 
-.permission-gate {
-  background: #fff7ed;
-  border: 1px solid #fdba74;
-  border-radius: 12px;
-  padding: 20px;
-  margin-top: 25px;
-  text-align: center;
-}
-
-.permission-gate h3 {
-  color: #c2410c;
-  margin-bottom: 10px;
-}
-
-.permission-gate p {
-  color: #7c2d12;
-}
+/* =========================
+   MOBILE
+========================= */
 
 @media (max-width: 768px) {
   .hero h1 {
-    font-size: 2rem;
+    font-size: 3.5rem;
+  }
+
+  .hero p {
+    font-size: 1.2rem;
   }
 
   .section {
-    padding: 20px 15px;
+    padding: 50px 20px;
   }
 
-  .button-group {
-    flex-direction: column;
+  .section h2 {
+    font-size: 2.25rem;
   }
 
-  .submit-btn,
-  .reset-btn {
-    width: 100%;
-  }
-
-  .topics-container {
-    flex-direction: column;
-  }
-
-  .topic-btn {
-    width: 100%;
+  .journey-company {
+    font-size: 1.5rem;
   }
 }
