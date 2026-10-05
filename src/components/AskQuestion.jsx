@@ -43,13 +43,16 @@ export default function AskQuestion({ skill }) {
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
         placeholder="Ask a question..."
-        rows="5"
-        maxLength="100"
+        rows={5}
+        maxLength={100}
       />
 
-      <p>{question.length}/100 characters</p>
+      <div className="char-count">
+        {question.length}/100 characters
+      </div>
 
       <button
+        type="button"
         className="submit-btn"
         onClick={handleSubmit}
       >
@@ -58,8 +61,7 @@ export default function AskQuestion({ skill }) {
 
       {path.length > 0 && (
         <div className="breadcrumb">
-          <strong>Journey:</strong>{" "}
-          {path.join(" → ")}
+          <strong>Journey:</strong> {path.join(" → ")}
         </div>
       )}
 
@@ -68,10 +70,9 @@ export default function AskQuestion({ skill }) {
           {topics.map((topic) => (
             <button
               key={topic}
+              type="button"
               className="topic-btn"
-              onClick={() =>
-                handleTopicClick(topic)
-              }
+              onClick={() => handleTopicClick(topic)}
             >
               {topic}
             </button>
@@ -81,4 +82,3 @@ export default function AskQuestion({ skill }) {
     </div>
   );
 }
-``
