@@ -1,198 +1,224 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&display=swap');
 
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-body {
-  background: #f3f3f3;
-  color: #111;
-  font-family: "Cormorant Garamond", serif;
+body{
+  background:#f3f3f3;
+  color:#111;
+  font-family:Arial, Helvetica, sans-serif;
 }
 
-#root {
-  width: 100%;
-  max-width: 100%;
+#root{
+  width:100%;
 }
 
-/* ===========================
+/* =========================
    HERO
-=========================== */
+========================= */
 
-.hero {
-  width: 100%;
-  max-width: 1400px;
-  padding: 40px;
+.hero{
+  width:100%;
+  padding:40px;
 }
 
-.hero-tagline {
-  color: #0d5a54;
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 1px;
-  text-transform: uppercase;
-  margin-bottom: 10px;
+.hero-tagline{
+  color:#0d5a54;
+  font-size:13px;
+  font-weight:700;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  margin-bottom:8px;
 }
 
-.hero-name {
-  display: block;
-  width: 100%;
-  font-size: 2rem;
-  font-weight: 700;
-  line-height: 1.1;
-  white-space: nowrap;
-  margin-bottom: 10px;
+.hero-header{
+  display:flex;
+  align-items:flex-start;
+  gap:20px;
+  flex-wrap:nowrap;
 }
 
-.hero-description {
-  max-width: 900px;
-  font-size: 1.15rem;
-  color: #555;
-  line-height: 1.4;
+.hero-name{
+  font-size:20px;
+  font-weight:700;
+  white-space:nowrap;
+  flex-shrink:0;
+  margin:0;
 }
 
-/* ===========================
+.hero-description{
+  font-size:14px;
+  color:#555;
+  max-width:700px;
+  line-height:1.4;
+  margin:0;
+}
+
+/* =========================
    SECTIONS
-=========================== */
+========================= */
 
-section {
-  padding: 0 40px 50px;
+section{
+  padding:0 40px 40px;
 }
 
-.section-title {
-  font-size: 2rem;
-  margin-bottom: 20px;
+.section-title{
+  font-size:18px;
+  font-weight:700;
+  margin-bottom:15px;
 }
 
-/* ===========================
+/* =========================
    JOURNEY
-=========================== */
+========================= */
 
-.journey-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
+.journey-grid{
+  display:flex;
+  flex-direction:column;
+  gap:10px;
 }
 
-.journey-card {
-  background: #fff;
-  border-left: 4px solid #2d6a4f;
-  border-radius: 8px;
-  padding: 16px;
+.journey-card{
+  background:#fff;
+  border-left:3px solid #2d6a4f;
+  border-radius:8px;
+  padding:14px;
 }
 
-.journey-company {
-  font-size: 1.2rem;
-  font-weight: 700;
+.journey-company{
+  font-size:16px;
+  font-weight:700;
 }
 
-.journey-role {
-  font-size: 1rem;
-  color: #666;
+.journey-role{
+  font-size:14px;
+  color:#666;
 }
 
-/* ===========================
+/* =========================
    SKILLS
-=========================== */
+========================= */
 
-.skills-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
+.skills-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
 }
 
-.skill-card {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 10px 14px;
-  cursor: pointer;
+.skill-card{
+  background:white;
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:10px 14px;
+  cursor:pointer;
 }
 
-.skill-card h3 {
-  font-size: 0.9rem;
-  margin: 0;
+.skill-card h3{
+  font-size:13px;
+  margin:0;
 }
 
-.skill-card p {
-  display: none;
+.skill-card p{
+  display:none;
 }
 
-/* ===========================
+/* =========================
    QUESTION
-=========================== */
+========================= */
 
-.question-box {
-  width: 100%;
-  min-height: 120px;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 14px;
+.question-section{
+  margin-top:20px;
 }
 
-.submit-btn {
-  margin-top: 12px;
-  border: none;
-  background: #2d6a4f;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 6px;
-  cursor: pointer;
+.question-box{
+  width:100%;
+  min-height:120px;
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:12px;
 }
 
-/* ===========================
+.submit-btn{
+  margin-top:10px;
+  background:#2d6a4f;
+  color:#fff;
+  border:none;
+  border-radius:6px;
+  padding:10px 14px;
+  cursor:pointer;
+}
+
+/* =========================
    DRILLDOWN
-=========================== */
+========================= */
 
-.drilldown-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 16px;
+.drilldown-container{
+  display:flex;
+  flex-wrap:wrap;
+  gap:10px;
+  margin-top:15px;
 }
 
-.drilldown-btn {
-  padding: 8px 14px;
-  background: white;
-  border: 1px solid #ccc;
-  border-radius: 6px;
-  cursor: pointer;
+.drilldown-btn{
+  background:#fff;
+  border:1px solid #ddd;
+  border-radius:6px;
+  padding:8px 12px;
+  cursor:pointer;
 }
 
-/* ===========================
+.drilldown-btn:hover{
+  background:#2d6a4f;
+  color:white;
+}
+
+/* =========================
    PROJECTS
-=========================== */
+========================= */
 
-.project-card {
-  background: white;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  padding: 20px;
-  margin-top: 12px;
+.project-card{
+  background:white;
+  border:1px solid #ddd;
+  border-radius:8px;
+  padding:16px;
+  margin-top:10px;
 }
 
-/* ===========================
+/* =========================
+   CONTACT
+========================= */
+
+.contact{
+  text-align:left;
+}
+
+/* =========================
    MOBILE
-=========================== */
+========================= */
 
-@media (max-width: 768px) {
+@media(max-width:768px){
 
-  .hero {
-    padding: 20px;
+  .hero{
+    padding:20px;
   }
 
-  .hero-name {
-    font-size: 1.8rem;
-    white-space: normal;
+  .hero-header{
+    flex-direction:column;
+    gap:10px;
   }
 
-  .hero-description {
-    font-size: 1rem;
+  .hero-name{
+    font-size:18px;
   }
 
-  section {
-    padding: 0 20px 40px;
+  .hero-description{
+    font-size:13px;
+  }
+
+  section{
+    padding:0 20px 30px;
   }
 }
