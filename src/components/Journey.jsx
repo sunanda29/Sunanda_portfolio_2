@@ -2,7 +2,7 @@ import { careerJourney } from "../data/careerJourney";
 
 export default function Journey() {
   return (
-    <section>
+    <section className="section">
       <h2 className="section-title">
         Professional Journey
       </h2>
@@ -20,6 +20,18 @@ export default function Journey() {
             <div className="journey-role">
               {job.role}
             </div>
+
+            {job.period && (
+              <div className="journey-period">
+                {job.period}
+              </div>
+            )}
+
+            {job.summary && (
+              <div className="journey-summary">
+                {job.summary}
+              </div>
+            )}
           </div>
         ))}
       </div>
