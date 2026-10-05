@@ -6,9 +6,16 @@ export default function Hero() {
       </div>
 
       <div className="hero-header">
-        <h3 className="hero-name">Sunanda Murthyraju</h3>
+        <h1 className="hero-name">
+          Sunanda Murthyraju
+        </h1>
 
         <p className="hero-description">
+          Product Strategy • Digital Transformation • Customer Experience •
+          Data-Driven Innovation
+        </p>
+
+        <p className="hero-summary">
           Product Strategy. Digital Transformation. Customer Experience.
           Data-Driven Innovation.
         </p>
@@ -16,3 +23,5 @@ export default function Hero() {
     </section>
   );
 }
+
+
