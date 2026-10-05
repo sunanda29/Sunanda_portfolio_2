@@ -5,10 +5,8 @@ export default function Hero() {
         PRODUCT • DIGITAL • AI • TRANSFORMATION
       </div>
 
-      <h3 className="hero-name">
-        Sunanda Murthyraju
-      </h3>
-
+     <h3 className="hero-name">Sunanda&nbsp;Murthyraju</h3>
+     
       <p className="hero-description">
         Product Strategy. Digital Transformation. Customer Experience.
         Data-Driven Innovation.
