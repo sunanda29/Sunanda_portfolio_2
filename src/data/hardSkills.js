@@ -1,42 +1,48 @@
-export const hardSkills = [
-  {
-    id: 1,
-    title: "Product Strategy & Roadmapping",
-    icon: "🎯"
-  },
-  {
-    id: 2,
-    title: "Data Analysis & Market Research",
-    icon: "📊"
-  },
-  {
-    id: 3,
-    title: "Product Lifecycle Management",
-    icon: "🚀"
-  },
-  {
-    id: 4,
-    title: "Technical Aptitude",
-    icon: "⚙️"
-  },
-  {
-    id: 5,
-    title: "Agile & Project Management",
-    icon: "✅"
-  },
-  {
-    id: 6,
-    title: "UX & Customer-Centric Design",
-    icon: "🎨"
-  },
-  {
-    id: 7,
-    title: "Data Science & Quantitative Analytics",
-    icon: "📈"
-  },
-  {
-    id: 8,
-    title: "Financial & Business Acumen",
-    icon: "💰"
+{
+  name: "Product Strategy & Roadmapping",
+
+  topics: [
+    "Product Vision",
+    "Product Goals",
+    "Roadmap Development",
+    "Stakeholder Management",
+    "Business Strategy"
+  ],
+
+  subTopics: {
+    "Product Vision": [
+      "Customer Outcomes",
+      "Strategic Objectives",
+      "Innovation Opportunities",
+      "Market Positioning"
+    ],
+
+    "Product Goals": [
+      "Business Goals",
+      "Customer Goals",
+      "Operational Goals",
+      "KPIs"
+    ],
+
+    "Roadmap Development": [
+      "Roadmap Prioritization",
+      "Release Planning",
+      "Dependency Management",
+      "Portfolio Planning"
+    ],
+
+    "Stakeholder Management": [
+      "Executive Alignment",
+      "Business Engagement",
+      "Architecture Reviews",
+      "Vendor Management"
+    ],
+
+    "Business Strategy": [
+      "Business Case",
+      "Market Analysis",
+      "Investment Planning",
+      "Growth Opportunities"
+    ]
   }
-];
+}
