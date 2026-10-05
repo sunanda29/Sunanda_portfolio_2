@@ -1,28 +1,28 @@
-export default function Journey({ journey }) {
+import { careerJourney } from "../data/careerJourney";
+
+export default function Journey() {
   return (
-    <section className="section" id="journey">
+    <section>
+      <h2 className="section-title">
+        Professional Journey
+      </h2>
 
-      <h2>Professional Journey</h2>
-
-      <div className="timeline">
-
-        {journey.map((item) => (
+      <div className="journey-grid">
+        {careerJourney.map((item, index) => (
           <div
-            key={item.company}
-            className="timeline-item"
+            key={index}
+            className="journey-card"
           >
-            <h3>{item.company}</h3>
+            <div className="journey-company">
+              {item.company}
+            </div>
 
-            <h4>{item.title}</h4>
-
-            <small>{item.years}</small>
-
-            <p>{item.description}</p>
+            <div className="journey-role">
+              {item.role}
+            </div>
           </div>
         ))}
-
       </div>
-
     </section>
   );
 }
