@@ -1,53 +1,84 @@
 import { useState } from "react";
+import { hardSkills } from "../data/hardSkills";
+import { softSkills } from "../data/softSkills";
 
-function AskQuestion({ selectedSkill }) {
+export default function AskQuestion({ skill }) {
   const [question, setQuestion] = useState("");
-  const [displayTopics, setDisplayTopics] = useState([]);
+  const [topics, setTopics] = useState([]);
+  const [path, setPath] = useState([]);
 
-  const handleAsk = () => {
-    if (!selectedSkill) return;
+  const knowledgeGraph = {
+    ...hardSkills,
+    ...softSkills,
+  };
 
-    setDisplayTopics(selectedSkill.topics || []);
+  const handleSubmit = () => {
+    const nextTopics = knowledgeGraph[skill.title];
+
+    if (!nextTopics) return;
+
+    setTopics(nextTopics);
+    setPath([skill.title]);
   };
 
   const handleTopicClick = (topic) => {
-    const subTopics = selectedSkill.subTopics?.[topic];
+    setPath((prev) => [...prev, topic]);
 
-    if (subTopics) {
-      setDisplayTopics(subTopics);
+    if (knowledgeGraph[topic]) {
+      setTopics(knowledgeGraph[topic]);
     } else {
-      // Return to Main Product Strategy topics
-      setDisplayTopics(selectedSkill.topics);
+      setTopics([]);
     }
   };
 
   return (
-    <div className="ask-section">
-      <h2>{selectedSkill?.name}</h2>
+    <div className="ask-question">
+      <h2>{skill.title}</h2>
+
+      <p>
+        What would you like to know about Sunanda's experience in this area?
+      </p>
 
       <textarea
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
-        placeholder={`Ask about ${selectedSkill?.name}`}
+        placeholder="Ask a question..."
+        rows="5"
+        maxLength="100"
       />
 
-      <button onClick={handleAsk}>
+      <p>{question.length}/100 characters</p>
+
+      <button
+        className="submit-btn"
+        onClick={handleSubmit}
+      >
         Explore
       </button>
 
-      <div className="topics-grid">
-        {displayTopics.map((topic) => (
-          <button
-            key={topic}
-            className="topic-chip"
-            onClick={() => handleTopicClick(topic)}
-          >
-            {topic}
-          </button>
-        ))}
-      </div>
+      {path.length > 0 && (
+        <div className="breadcrumb">
+          <strong>Journey:</strong>{" "}
+          {path.join(" → ")}
+        </div>
+      )}
+
+      {topics.length > 0 && (
+        <div className="topics-container">
+          {topics.map((topic) => (
+            <button
+              key={topic}
+              className="topic-btn"
+              onClick={() =>
+                handleTopicClick(topic)
+              }
+            >
+              {topic}
+            </button>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
-
-export default AskQuestion;
+``
