@@ -1,10 +1,6 @@
 export default function Hero() {
   return (
-    <section className="hero">
-      <div className="hero-tagline">
-        PRODUCT • DIGITAL • AI • TRANSFORMATION
-      </div>
-
+    <div className="hero">
       <h1>
         Sunanda
         <br />
@@ -15,6 +11,6 @@ export default function Hero() {
         Product Strategy. Digital Transformation.
         Customer Experience. Data-Driven Innovation.
       </p>
-    </section>
+    </div>
   );
 }
