@@ -1,43 +1,58 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: #f8faf9;
+  color: #222;
+  font-family: Inter, sans-serif;
+}
+
 .container {
   max-width: 1200px;
   margin: auto;
   padding: 40px;
 }
 
+/* HERO */
+
 .hero {
-  min-height: 75vh;
+  min-height: 75*h;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-directi*n: column;
+  justify-content: cent*r;
 }
 
 .tag {
   color: #0a5a42;
-  font-size: 14px;
-  font-weight: 600;
-  letter-spacing: 2px;
+  f*nt-size: 14px;
+  font-weight: 600;*  letter-spacing: 2px;
 }
 
-.hero h1 {
+.hero h1*{
   font-size: 88px;
-  line-height: 0.95;
+  line*height: 0.95*
   margin: 20px 0;
 }
 
-.hero-text {
-  max-width: 700px;
+.hero-text {* *max-width: 700px;
   font-size: 22px;
   color: #555;
 }
 
+/* SECTIONS */
+
 .section {
-  margin-top: 80px;
+  margin-t*p: 80px;
 }
 
 .section h2 {
   margin-bottom: 25px;
   font-size: 40px;
 }
+
+/* TIMELINE */
 
 .timeline {
   display: grid;
@@ -49,11 +64,19 @@
   border-left: 4px solid #0a5a42;
   padding: 18px;
   border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
 }
 
 .timeline-item h3 {
-  margin-bottom: 5px;
+  margin: 0 0 5px;
 }
+
+.timeline-item p {
+  margin: 0;
+  color: #555;
+}
+
+/* SKILLS */
 
 .skills-grid {
   display: flex;
@@ -68,6 +91,7 @@
   border-radius: 10px;
   cursor: pointer;
   transition: all 0.25s ease;
+  font-size: 15px;
 }
 
 .skill-card:hover {
@@ -76,8 +100,14 @@
   transform: translateY(-2px);
 }
 
+/* ASK SECTION */
+
 .ask-section {
   margin-top: 80px;
+}
+
+.ask-section h2 {
+  margin-bottom: 10px;
 }
 
 textarea {
@@ -89,12 +119,13 @@ textarea {
   border-radius: 8px;
   font-size: 16px;
   resize: vertical;
-  box-sizing: border-box;
+  background: white;
 }
 
 .counter {
   margin-top: 10px;
   color: #777;
+  font-size: 14px;
 }
 
 .char-count {
@@ -119,21 +150,27 @@ textarea {
   background: #084532;
 }
 
+/* ANSWER BOX */
+
 .answer-box {
   margin-top: 25px;
   background: white;
   padding: 25px;
   border-radius: 10px;
   border: 1px solid #eee;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
 }
 
 .answer-box h3 {
-  margin-bottom: 10px;
+  margin-top: 0;
+  color: #0a5a42;
 }
 
 .answer-box h4 {
-  margin-top: 20px;
+  margin-top: 25px;
 }
+
+/* RELATED TOPICS */
 
 .related {
   display: flex;
@@ -147,10 +184,18 @@ textarea {
   border: none;
   border-radius: 20px;
   background: #e8f2ed;
+  color: #0a5a42;
   cursor: pointer;
+  transition: all 0.25s ease;
+  font-weight: 500;
 }
 
-/* ===== KNOWLEDGE EXPLORER ===== */
+.related-btn:hover {
+  background: #0a5a42;
+  color: white;
+}
+
+/* KNOWLEDGE EXPLORER */
 
 .breadcrumb {
   margin-top: 25px;
@@ -190,7 +235,7 @@ textarea {
   transform: scale(0.97);
 }
 
-/* ===== CONTACT SECTION ===== */
+/* CONTACT */
 
 .contact {
   margin-top: 120px;
@@ -203,7 +248,7 @@ textarea {
 }
 
 .contact p {
-  margin-bottom: 20px;
+  margin-bottom: 25px;
   color: #555;
 }
 
@@ -221,12 +266,61 @@ textarea {
   background: #084532;
 }
 
-/* ===== RESPONSIVE ===== */
+/* MOBILE */
 
 @media (max-width: 768px) {
   .container {
     padding: 20px;
   }
 
+  .hero {
+    min-height: auto;
+    padding-top: 60px;
+  }
+
   .hero h1 {
-   
+    font-size: 54px;
+  }
+
+  .hero-text {
+    font-size: 18px;
+  }
+
+  .section h2 {
+    font-size: 30px;
+  }
+
+  .skills-grid {
+    flex-direction: column;
+  }
+
+  .skill-card {
+    width: 100%;
+  }
+
+  .related {
+    flex-direction: column;
+  }
+
+  .related-btn {
+    width: 100%;
+  }
+
+  .contact {
+    margin-top: 80px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero-text {
+    font-size: 16px;
+  }
+
+  .section h2 {
+    font-size: 26px;
+  }
+}
