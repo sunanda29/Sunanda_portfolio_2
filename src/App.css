@@ -14,55 +14,61 @@ body {
 
 #root {
   width: 100%;
+  max-width: 100%;
 }
 
-/* HERO */
+/* ===========================
+   HERO
+=========================== */
 
 .hero {
+  width: 100%;
+  max-width: 1400px;
   padding: 40px;
 }
 
 .hero-tagline {
   color: #0d5a54;
-  font-size: 0.8rem;
+  font-size: 0.85rem;
   font-weight: 700;
-  letter-spacing: 2px;
+  letter-spacing: 1px;
   text-transform: uppercase;
-  margin-bottom: 12px;
+  margin-bottom: 10px;
 }
 
-.hero h1,
-.hero h2,
-.hero h3,
 .hero-name {
+  display: block;
+  width: 100%;
   font-size: 2rem;
-  line-height: 1;
   font-weight: 700;
+  line-height: 1.1;
   white-space: nowrap;
   margin-bottom: 10px;
 }
 
-.hero p {
-  margin-top: 0;
+.hero-description {
   max-width: 900px;
-  font-size: 1.2rem;
-  line-height: 1.4;
+  font-size: 1.15rem;
   color: #555;
+  line-height: 1.4;
 }
 
-/* SECTIONS */
+/* ===========================
+   SECTIONS
+=========================== */
 
 section {
   padding: 0 40px 50px;
 }
 
 .section-title {
-  font-size: 2.2rem;
-  margin-bottom: 24px;
-  font-weight: 700;
+  font-size: 2rem;
+  margin-bottom: 20px;
 }
 
-/* JOURNEY */
+/* ===========================
+   JOURNEY
+=========================== */
 
 .journey-grid {
   display: flex;
@@ -71,48 +77,42 @@ section {
 }
 
 .journey-card {
-  background: #fafafa;
-  padding: 16px;
-  border-radius: 8px;
+  background: #fff;
   border-left: 4px solid #2d6a4f;
+  border-radius: 8px;
+  padding: 16px;
 }
 
 .journey-company {
   font-size: 1.2rem;
   font-weight: 700;
-  margin-bottom: 4px;
 }
 
 .journey-role {
   font-size: 1rem;
-  color: #555;
+  color: #666;
 }
 
-/* SKILLS */
+/* ===========================
+   SKILLS
+=========================== */
 
 .skills-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
+  gap: 10px;
 }
 
 .skill-card {
   background: white;
   border: 1px solid #ddd;
   border-radius: 8px;
-  padding: 10px 15px;
+  padding: 10px 14px;
   cursor: pointer;
-  transition: 0.2s;
-}
-
-.skill-card:hover {
-  transform: translateY(-2px);
-  border-color: #2d6a4f;
 }
 
 .skill-card h3 {
-  font-size: 0.95rem;
-  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.9rem;
   margin: 0;
 }
 
@@ -120,21 +120,16 @@ section {
   display: none;
 }
 
-/* QUESTION AREA */
-
-.question-section {
-  margin-top: 24px;
-}
+/* ===========================
+   QUESTION
+=========================== */
 
 .question-box {
   width: 100%;
   min-height: 120px;
   border: 1px solid #ddd;
-  background: white;
   border-radius: 8px;
   padding: 14px;
-  font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
 }
 
 .submit-btn {
@@ -147,107 +142,57 @@ section {
   cursor: pointer;
 }
 
-.submit-btn:hover {
-  background: #1f4d38;
-}
-
-/* DRILLDOWN */
+/* ===========================
+   DRILLDOWN
+=========================== */
 
 .drilldown-container {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .drilldown-btn {
-  border: 1px solid #ccc;
-  background: white;
   padding: 8px 14px;
+  background: white;
+  border: 1px solid #ccc;
   border-radius: 6px;
-  font-size: 0.9rem;
   cursor: pointer;
 }
 
-.drilldown-btn:hover {
-  background: #2d6a4f;
-  color: white;
-  border-color: #2d6a4f;
-}
-
-/* PROJECTS */
+/* ===========================
+   PROJECTS
+=========================== */
 
 .project-card {
   background: white;
   border: 1px solid #ddd;
-  padding: 20px;
   border-radius: 8px;
+  padding: 20px;
   margin-top: 12px;
 }
 
-.project-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.project-card p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* CONTACT */
-
-.contact {
-  text-align: left;
-}
-
-.contact h2 {
-  margin-bottom: 10px;
-}
-
-.contact a {
-  color: inherit;
-}
-
-/* MOBILE */
+/* ===========================
+   MOBILE
+=========================== */
 
 @media (max-width: 768px) {
+
   .hero {
     padding: 20px;
   }
 
-  .hero h1,
-  .hero h2,
-  .hero h3,
   .hero-name {
-    font-size: 2rem;
+    font-size: 1.8rem;
+    white-space: normal;
   }
 
-  .hero p {
+  .hero-description {
     font-size: 1rem;
   }
 
   section {
     padding: 0 20px 40px;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .journey-company {
-    font-size: 1rem;
-  }
-
-  .journey-role {
-    font-size: 0.9rem;
-  }
-
-  .skill-card h3 {
-    font-size: 0.85rem;
-  }
-
-  .question-box {
-    font-size: 0.95rem;
   }
 }
