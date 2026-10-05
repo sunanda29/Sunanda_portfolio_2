@@ -1,64 +1,53 @@
-export default function AskQuestion({
-  selectedSkill,
-  answer,
-  question,
-  setQuestion,
-  related,
-  onRelatedClick
-}) {
+import { useState } from "react";
+
+function AskQuestion({ selectedSkill }) {
+  const [question, setQuestion] = useState("");
+  const [displayTopics, setDisplayTopics] = useState([]);
+
+  const handleAsk = () => {
+    if (!selectedSkill) return;
+
+    setDisplayTopics(selectedSkill.topics || []);
+  };
+
+  const handleTopicClick = (topic) => {
+    const subTopics = selectedSkill.subTopics?.[topic];
+
+    if (subTopics) {
+      setDisplayTopics(subTopics);
+    } else {
+      // Return to Main Product Strategy topics
+      setDisplayTopics(selectedSkill.topics);
+    }
+  };
+
   return (
-    <section className="ask-section">
-
-      <h2>{selectedSkill}</h2>
-
-      <p>
-        What would you like to know about
-        Sunanda's experience?
-      </p>
+    <div className="ask-section">
+      <h2>{selectedSkill?.name}</h2>
 
       <textarea
         value={question}
-        maxLength={100}
-        placeholder="Ask a question (100 characters max)"
-        onChange={(e) =>
-          setQuestion(e.target.value)
-        }
+        onChange={(e) => setQuestion(e.target.value)}
+        placeholder={`Ask about ${selectedSkill?.name}`}
       />
 
-      <p className="counter">
-        {question.length}/100 Characters
-      </p>
+      <button onClick={handleAsk}>
+        Explore
+      </button>
 
-      <div className="answer-box">
-
-        <h3>Experience Summary</h3>
-
-        <p>{answer}</p>
-
-        {related?.length > 0 && (
-          <>
-            <h4>Related Topics</h4>
-
-            <div className="related">
-
-              {related.map(topic => (
-                <button
-                  key={topic}
-                  className="related-btn"
-                  onClick={() =>
-                    onRelatedClick(topic)
-                  }
-                >
-                  {topic}
-                </button>
-              ))}
-
-            </div>
-          </>
-        )}
-
+      <div className="topics-grid">
+        {displayTopics.map((topic) => (
+          <button
+            key={topic}
+            className="topic-chip"
+            onClick={() => handleTopicClick(topic)}
+          >
+            {topic}
+          </button>
+        ))}
       </div>
-
-    </section>
+    </div>
   );
 }
+
+export default AskQuestion;
