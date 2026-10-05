@@ -163,20 +163,29 @@ function SkillCard({ skill, onClick }) {
 }
 
 export default function App() {
-  const [selectedSkill, setSelectedSkill] =
-    useState(null);
-
-  const [question, setQuestion] =
-    useState("");
+  const [selectedSkill, setSelectedSkill] = useState(null);
+  const [question, setQuestion] = useState("");
+  const [submitted, setSubmitted] = useState(false);
 
   const [hasPermission, setHasPermission] =
     useState(false);
+
+  const handleSkillClick = (skill) => {
+    setSelectedSkill(skill);
+    setQuestion("");
+    setSubmitted(false);
+  };
+
+  const handleSubmit = () => {
+    if (!question.trim()) return;
+
+    setSubmitted(true);
+  };
 
   return (
     <div className="container">
 
       {/* HERO */}
-
       <section className="hero">
 
         <div className="tag">
@@ -197,7 +206,6 @@ export default function App() {
       </section>
 
       {/* JOURNEY */}
-
       <section className="section">
 
         <h2>Professional Journey</h2>
@@ -211,12 +219,12 @@ export default function App() {
 
           <div className="timeline-item">
             <h3>Honeywell</h3>
-            <p>Business Analysis & Data Science</p>
+            <p>Data Science and Analytics R&D</p>
           </div>
 
           <div className="timeline-item">
             <h3>Unilever</h3>
-            <p>Digital Product Ownership</p>
+            <p>Digital Product Management</p>
           </div>
 
           <div className="timeline-item">
@@ -244,7 +252,6 @@ export default function App() {
       </section>
 
       {/* HARD SKILLS */}
-
       <section className="section">
 
         <h2>Hard Skills</h2>
@@ -254,7 +261,7 @@ export default function App() {
             <SkillCard
               key={skill}
               skill={skill}
-              onClick={setSelectedSkill}
+              onClick={handleSkillClick}
             />
           ))}
         </div>
@@ -262,7 +269,6 @@ export default function App() {
       </section>
 
       {/* SOFT SKILLS */}
-
       <section className="section">
 
         <h2>Soft Skills</h2>
@@ -272,7 +278,7 @@ export default function App() {
             <SkillCard
               key={skill}
               skill={skill}
-              onClick={setSelectedSkill}
+              onClick={handleSkillClick}
             />
           ))}
         </div>
@@ -280,7 +286,6 @@ export default function App() {
       </section>
 
       {/* ASK SECTION */}
-
       {selectedSkill && (
         <section className="ask-section">
 
@@ -304,40 +309,49 @@ export default function App() {
             {question.length}/100 characters
           </p>
 
-          <div className="answer-box">
+          <button
+            className="submit-btn"
+            onClick={handleSubmit}
+          >
+            Submit Question
+          </button>
 
-            <h3>Experience Summary</h3>
+          {submitted && (
+            <div className="answer-box">
 
-            <p>
-              {knowledgeBase[selectedSkill]?.answer}
-            </p>
+              <h3>Experience Summary</h3>
 
-            <h4>Related Topics</h4>
+              <p>
+                {knowledgeBase[selectedSkill]?.answer}
+              </p>
 
-            <div className="related">
+              <h4>Related Topics</h4>
 
-              {knowledgeBase[selectedSkill]?.related?.map(
-                (item) => (
-                  <button
-                    key={item}
-                    className="related-btn"
-                    onClick={() =>
-                      setSelectedSkill(item)
-                    }
-                  >
-                    {item}
-                  </button>
-                )
-              )}
+              <div className="related">
+
+                {knowledgeBase[selectedSkill]?.related?.map(
+                  (item) => (
+                    <button
+                      key={item}
+                      className="related-btn"
+                      onClick={() =>
+                        handleSkillClick(item)
+                      }
+                    >
+                      {item}
+                    </button>
+                  )
+                )}
+
+              </div>
 
             </div>
-
-          </div>
+          )}
 
         </section>
       )}
 
-      {/* PROJECT PERMISSIONS */}
+      {/* PROJECT ACCESS */}
 
       <PermissionGate
         hasPermission={hasPermission}
