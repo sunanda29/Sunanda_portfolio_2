@@ -35,11 +35,11 @@ body {
 .hero h2,
 .hero h3,
 .hero-name {
-  font-size: 2.5rem;
+  font-size: 2rem;
   line-height: 1;
   font-weight: 700;
-  color: #000;
-  margin-bottom: 12px;
+  white-space: nowrap;
+  margin-bottom: 10px;
 }
 
 .hero p {
