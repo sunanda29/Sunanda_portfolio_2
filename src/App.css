@@ -1,208 +1,157 @@
-.container {
-  max-width: 1200px;
-  margin: auto;
-  padding: 40px;
+/* ---------- GLOBAL ---------- */
+
+body {
+  margin: 0;
+  font-family: Inter, Arial, sans-serif;
+  background: #faf9f6;
+  color: #2d3748;
+  line-height: 1.6;
 }
+
+.container {
+  max-width: 1300px;
+  margin: auto;
+  padding: 50px;
+}
+
+/* ---------- HERO ---------- */
 
 .hero {
   min-height: 75vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
+  padding-bottom: 40px;
 }
 
 .tag {
-  color: #0a5a42;
+  color: #7f9cbf;
   font-size: 14px;
   font-weight: 600;
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 
-.hero h1 {
-  font-size: 88px;
-  line-height: 0.95;
+.hero h1,
+.hero-name {
+  font-size: 3.8rem;
+  line-height: 1.1;
   margin: 20px 0;
+  white-space: nowrap;
+  color: #34495e;
+  font-weight: 700;
 }
 
 .hero-text {
-  max-width: 700px;
-  font-size: 22px;
-  color: #555;
+  max-width: 850px;
+  font-size: 1.2rem;
+  color: #5d6d7e;
+  line-height: 1.9;
 }
+
+/* ---------- SECTIONS ---------- */
 
 .section {
-  margin-top: 80px;
+  margin-top: 100px;
 }
 
-.section h2 {
-  margin-bottom: 25px;
-  font-size: 40px;
+.section h2,
+.section-title {
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  color: #34495e;
 }
+
+/* ---------- EXPERIENCE / JOURNEY ---------- */
 
 .timeline {
-  display: grid;
-  gap: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
 }
 
 .timeline-item {
-  background: white;
-  border-left: 4px solid #0a5a42;
-  padding: 18px;
-  border-radius: 8px;
+  background: #ffffff;
+  border-left: 5px solid #b8cbe0;
+  padding: 28px;
+  border-radius: 16px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
 .timeline-item h3 {
-  margin-bottom: 5px;
+  margin-bottom: 10px;
+  color: #34495e;
 }
+
+.timeline-item p {
+  line-height: 1.9;
+  margin-bottom: 10px;
+  color: #5d6d7e;
+}
+
+/* ---------- SKILLS ---------- */
 
 .skills-grid {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 20px;
 }
 
 .skill-card {
-  padding: 14px 18px;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 10px;
+  padding: 16px 22px;
+  background: linear-gradient(
+    135deg,
+    #f8edeb,
+    #fde2e4
+  );
+  border: 1px solid #f0d9da;
+  border-radius: 14px;
   cursor: pointer;
-  transition: all 0.25s;
+  transition: all 0.3s ease;
+  color: #34495e;
 }
 
 .skill-card:hover {
-  background: #0a5a42;
-  color: white;
+  transform: translateY(-4px);
+  background: #e7d8f5;
+  color: #34495e;
 }
 
-/* QUESTION AREA */
+.skill-card h3 {
+  margin: 0;
+}
+
+/* Extra spacing between skill sections */
+
+.hard-skills {
+  margin-bottom: 90px;
+}
+
+.soft-skills {
+  margin-top: 90px;
+}
+
+/* ---------- QUESTION AREA ---------- */
 
 .question-section {
-  margin-top: 24px;
+  margin-top: 30px;
 }
 
 .question-box {
   width: 100%;
-  min-height: 120px;
-  border: 1px solid #ddd;
-  background: white;
-  border-radius: 8px;
-  padding: 14px;
+  min-height: 180px;
+  border: 1px solid #d9d9d9;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 18px;
   font-size: 1rem;
-  font-family: Arial, Helvetica, sans-serif;
+  line-height: 1.7;
+  box-sizing: border-box;
+  resize: vertical;
+  font-family: Inter, Arial, sans-serif;
 }
 
-.submit-btn {
-  margin-top: 12px;
-  border: none;
-  background: #2d6a4f;
-  color: white;
-  padding: 10px 18px;
-  border-radius: 6px;
-  cursor: pointer;
-}
-
-.submit-btn:hover {
-  background: #1f4d38;
-}
-
-/* DRILLDOWN */
-
-.drilldown-container {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 20px;
-}
-
-.drilldown-btn {
-  border: 1px solid #ccc;
-  background: white;
-  padding: 8px 14px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  cursor: pointer;
-}
-
-.drilldown-btn:hover {
-  background: #2d6a4f;
-  color: white;
-  border-color: #2d6a4f;
-}
-
-/* PROJECTS */
-
-.project-card {
-  background: white;
-  border: 1px solid #ddd;
-  padding: 20px;
-  border-radius: 8px;
-  margin-top: 12px;
-}
-
-.project-card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 8px;
-}
-
-.project-card p {
-  font-size: 1rem;
-  line-height: 1.5;
-}
-
-/* CONTACT */
-
-.contact {
-  text-align: left;
-}
-
-.contact h2 {
-  margin-bottom: 10px;
-}
-
-.contact a {
-  color: inherit;
-}
-
-/* MOBILE */
-
-@media (max-width: 768px) {
-  .hero {
-    padding: 20px;
-  }
-
-  .hero h1,
-  .hero h2,
-  .hero h3,
-  .hero-name {
-    font-size: 2rem;
-  }
-
-  .hero p {
-    font-size: 1rem;
-  }
-
-  section {
-    padding: 0 20px 40px;
-  }
-
-  .section-title {
-    font-size: 1.8rem;
-  }
-
-  .journey-company {
-    font-size: 1rem;
-  }
-
-  .journey-role {
-    font-size: 0.9rem;
-  }
-
-  .skill-card h3 {
-    font-size: 0.85rem;
-  }
-
-  .question-box {
-    font-size: 0.95rem;
-  }
-}
+.question-box:focus {
+  outline: none;
+  border-color: #b8cbe0;
+  box
