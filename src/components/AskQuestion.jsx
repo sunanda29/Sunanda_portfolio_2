@@ -113,7 +113,7 @@ export default function AskQuestion({ skill }) {
       <textarea
         value={question}
         onChange={(e) => setQuestion(e.target.value)}
-        placeholder="Ask a question..."
+        placeholder="Ask a question or use speech..."
         rows={5}
         maxLength={100}
       />
@@ -128,7 +128,7 @@ export default function AskQuestion({ skill }) {
           className={`mic-btn ${isListening ? "listening" : ""}`}
           onClick={isListening ? stopListening : startListening}
         >
-          {isListening ? "🔴 Listening..." : "🎤 Speak"}
+          🎤 Speak
         </button>
 
         <button
@@ -136,7 +136,7 @@ export default function AskQuestion({ skill }) {
           className="submit-btn"
           onClick={handleSubmit}
         >
-          Submit
+          Submit Question
         </button>
 
         <button
@@ -171,4 +171,3 @@ export default function AskQuestion({ skill }) {
     </div>
   );
 }
-`
