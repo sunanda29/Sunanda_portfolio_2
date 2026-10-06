@@ -172,3 +172,62 @@ font-weight: 600;
 .submit-btn:hover {
 background: #9fd3c1;
 }
+/* ---------- SPEECH TO TEXT ---------- */
+
+.mic-btn {
+  margin-top: 16px;
+  border: none;
+  background: #e7d8f5;
+  color: #34495e;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.mic-btn:hover {
+  background: #dcc8ef;
+}
+
+.mic-btn.listening {
+  background: #fde2e4;
+  color: #c0392b;
+  animation: pulse 1.2s infinite;
+}
+
+.button-group {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 16px;
+}
+
+.reset-btn {
+  margin-top: 16px;
+  border: none;
+  background: #f8edeb;
+  color: #34495e;
+  padding: 14px 24px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.reset-btn:hover {
+  background: #f3d9d5;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.04);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
