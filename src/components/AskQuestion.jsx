@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import { hardSkills } from "../data/hardSkills";
 import { softSkills } from "../data/softSkills";
 
@@ -6,10 +6,63 @@ export default function AskQuestion({ skill }) {
   const [question, setQuestion] = useState("");
   const [topics, setTopics] = useState([]);
   const [path, setPath] = useState([]);
+  const [isListening, setIsListening] = useState(false);
+
+  const recognitionRef = useRef(null);
 
   const knowledgeGraph = {
     ...hardSkills,
     ...softSkills,
+  };
+
+  const startListening = () => {
+    const SpeechRecognition =
+      window.SpeechRecognition || window.webkitSpeechRecognition;
+
+    if (!SpeechRecognition) {
+      alert(
+        "Speech recognition is not supported in this browser. Please use Chrome or Edge."
+      );
+      return;
+    }
+
+    const recognition = new SpeechRecognition();
+
+    recognition.lang = "en-US";
+    recognition.continuous = false;
+    recognition.interimResults = true;
+
+    recognition.onstart = () => {
+      setIsListening(true);
+    };
+
+    recognition.onresult = (event) => {
+      let transcript = "";
+
+      for (let i = 0; i < event.results.length; i++) {
+        transcript += event.results[i][0].transcript + " ";
+      }
+
+      setQuestion(transcript.trim());
+    };
+
+    recognition.onend = () => {
+      setIsListening(false);
+    };
+
+    recognition.onerror = () => {
+      setIsListening(false);
+    };
+
+    recognition.start();
+    recognitionRef.current = recognition;
+  };
+
+  const stopListening = () => {
+    if (recognitionRef.current) {
+      recognitionRef.current.stop();
+      setIsListening(false);
+    }
   };
 
   const handleSubmit = () => {
@@ -33,7 +86,6 @@ export default function AskQuestion({ skill }) {
     if (knowledgeGraph[topic]) {
       setTopics(knowledgeGraph[topic]);
     } else {
-      // infinite loop back to root skill
       setTopics([skill.title]);
     }
   };
@@ -42,6 +94,12 @@ export default function AskQuestion({ skill }) {
     setQuestion("");
     setTopics([]);
     setPath([]);
+
+    if (recognitionRef.current) {
+      recognitionRef.current.stop();
+    }
+
+    setIsListening(false);
   };
 
   return (
@@ -65,6 +123,14 @@ export default function AskQuestion({ skill }) {
       </div>
 
       <div className="button-group">
+        <button
+          type="button"
+          className={`mic-btn ${isListening ? "listening" : ""}`}
+          onClick={isListening ? stopListening : startListening}
+        >
+          {isListening ? "🔴 Listening..." : "🎤 Speak"}
+        </button>
+
         <button
           type="button"
           className="submit-btn"
@@ -105,3 +171,4 @@ export default function AskQuestion({ skill }) {
     </div>
   );
 }
+`
